@@ -17,13 +17,12 @@ app.get('/usuario', verifyToken, (req, res) => {
     .limit(limite)
     .exec((error, usuarios) => {
       if (error) {
-        return res.status(400).json({
+        return res.status(500).json({
           ok: false,
           error
         })
       }
       Usuario.count({estado: true}, (error, conteo) => {
-
         res.json({
           ok: true,
           usuarios,
@@ -79,7 +78,7 @@ app.delete('/usuario/:id', [verifyToken, verifyAdmin], (req, res) => {
   let id = req.params.id;
   Usuario.findByIdAndUpdate(id, {estado: false}, {new: true}, (error, usuarioBorrado) => {
     if (error) {
-      return res.status(400).json({
+      return res.status(500).json({
         ok: false,
         error
       })
