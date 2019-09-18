@@ -11,6 +11,7 @@
         content="473270679410-o74lmoifmgahe10c3o9kj2mtm9nnik1a.apps.googleusercontent.com">
 </head>
 <body>
+<!--<img src="http://localhost:3000/imagen/usuarios/5d7fc94613b30b46df1a262e-913.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InJvbGUiOiJBRE1JTl9ST0xFIiwiZXN0YWRvIjp0cnVlLCJnb29nbGUiOmZhbHNlLCJfaWQiOiI1ZDdmYzk0NjEzYjMwYjQ2ZGYxYTI2MmUiLCJub21icmUiOiJuaWNvIiwiZW1haWwiOiJ0ZXN0MkBmb2xkZXJpdC5uZXQiLCJfX3YiOjB9LCJpYXQiOjE1Njg4MTUzMjgsImV4cCI6MTU2ODk4ODEyOH0.fLze0kuJcOcU199fhIzG46LU2FwOLQaWurNXlNgcfNk">-->
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
 <a href="#" onclick="signOut();">Sign out</a>
 <script>
@@ -32,7 +33,7 @@
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/google');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onload = function() {
+    xhr.onload = function () {
       console.log('Signed in as: ' + xhr.responseText);
     };
     xhr.send('idtoken=' + id_token);
